@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Counter</title>
+    <style>
+        * {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #111;
+            color: white;
+        }
+        .navbar {
+            background-color: #222; 
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .navdiv {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo a {
+            font-size: 35px;
+            font-weight: 700;
+            color: #00ffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s ease;
+        }
+        .logo a:hover {
+            color: #00e6e6;
+        }
+        ul {
+            display: flex;
+            gap: 30px;
+        }
+        li {
+            list-style: none;
+        }
+        li a {
+            color: #00ffff;
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            transition: 0.3s ease;
+        }
+        li a:hover {
+            color: #00e6e6;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f0f0f 50%, #222 100%);
+        }
+        h2 {
+            font-size: 36px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #00ffff;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+        p {
+            font-size: 24px;  /* Increased font size */
+            font-weight: bold;  /* Made text bold */
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="{{ url_for('Welcome') }}">Visit Counter</a></div>
+            <ul>
+                <li><a href="{{ url_for('Welcome') }}">Welcome</a></li>
+                <li><a href="#">Visit Counter</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section>
+        <h2>Visit Counter</h2>
+        <p>The amount of times your page has been visited is:{{counter}} </p>
+    </section>
+    
+</body>
+</html>

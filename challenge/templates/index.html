@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        * {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #111;
+            color: white;
+        }
+        .navbar {
+            background-color: #222; 
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .navdiv {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo a {
+            font-size: 35px;
+            font-weight: 700;
+            color: #00ffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s ease;
+        }
+        .logo a:hover {
+            color: #00e6e6;
+        }
+        ul {
+            display: flex;
+            gap: 30px;
+        }
+        li {
+            list-style: none;
+        }
+        li a {
+            color: #00ffff;
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            transition: 0.3s ease;
+        }
+        li a:hover {
+            color: #00e6e6;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+        }
+        button {
+            background-color: #00ffff;
+            color: #111;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+        button:hover {
+            background-color: white;
+            color: #00ffff;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(0, 255, 255, 0.6);
+        }
+        button a {
+            color: inherit;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f0f0f 50%, #222 100%);
+        }
+        h2 {
+            font-size: 36px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #00ffff;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+        p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="#">Visit Counter</a></div>
+            <ul>
+                <li><a href="#">Welcome</a></li>
+                <li><a href="{{ url_for('Visitcounter') }}">Visit Counter</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section>
+        <h2>Welcome to the Visit Counter</h2>
+        <p>On this website, you can view how many times you've visited. Click the button below to check it out!</p>
+        <button><a href="{{ url_for('Visitcounter') }}">Check it out!</a></button>
+    </section>
+    
+</body>
+</html>

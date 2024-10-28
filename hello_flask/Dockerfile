@@ -1,8 +1,8 @@
-FROM python:3.9-slim
+# Stage 1: Build stage
+
+FROM python:3.9-slim as Build
 
 WORKDIR /app
-
-COPY . .
 
 RUN apt-get update && apt-get install -y \
     gcc \
@@ -10,8 +10,20 @@ RUN apt-get update && apt-get install -y \
     libmariadb-dev \
     pkg-config
 
+COPY . .
+
 RUN pip install flask mysqlclient
+
+
+# Stage 2 Prod stage
+
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY --from=Build /app /app
 
 EXPOSE 5002
 
 CMD ["python", "app.py"]
+
