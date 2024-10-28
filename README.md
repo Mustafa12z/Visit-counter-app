@@ -4,6 +4,7 @@
 
 The **Visit Counter Web Application** is a simple and elegant web application that keeps track of the number of visits to the page. Built with a sleek HTML and CSS front-end, this project provides a visually appealing interface for users to interact with. The project includes both Docker and Docker Compose configurations to support different use cases. You can either use Docker to manually build and run the container or take advantage of Docker Compose for streamlined multi-service setups.
 
+![alt text](image.png)
 ## Project Structure
 
 ```
